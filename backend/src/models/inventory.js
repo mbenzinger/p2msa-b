@@ -8,13 +8,17 @@ const InventorySchema = new Schema({
     name: { type: String, required: true },
     type: { type: String, required: true },
     size: { type: String, required: true },
-    sku: { type: String, required: true }
+    sku: { type: String, required: true },
+    qty: { type: Number, required: false }
 })
 
 const Inventory = mongoose.model('Inventory', InventorySchema)
 module.exports = Inventory
 
 //ORIGINAL SQL STUFF
+
+//const { INTEGER } = require('sequelize')
+
 // 'use strict';
 // const {
 //     Model

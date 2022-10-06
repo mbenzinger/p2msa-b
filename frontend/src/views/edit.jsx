@@ -46,6 +46,13 @@ function Edit({ inventory }) {
                     required
                     defaultValue={inventory.sku}
                 />
+                <label htmlFor="qty">QTY</label>
+                <input
+                    type="Number"
+                    name="qty"
+                    id="qty"
+                    defaultValue={inventory.qty}
+                />
                 <br />
                 <input type="submit" />
             </form>

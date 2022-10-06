@@ -9,6 +9,7 @@ function Show({ inventory }) {
             <h3>{inventory.type}</h3>
             <h3>{inventory.size}</h3>
             <h3>{inventory.sku}</h3>
+            <h3>{inventory.qty}</h3>
             <form action={`/inventory/${inventory.id}?_method=DELETE`} method="POST">
                 <input type='submit' value="DELETE" />
             </form>

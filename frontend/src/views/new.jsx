@@ -41,6 +41,12 @@ function New({ inventory }) {
                     id="sku"
                     required
                 />
+                <label htmlFor="qty">QTY</label>
+                <input
+                    type="text"
+                    name="qty"
+                    id="qty"
+                />
                 <br />
                 <input type="submit" />
             </form>
