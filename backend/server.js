@@ -2,7 +2,7 @@ import React, { startTransition } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from '../frontend/src/App';
-import reportWebVitals from './reportWebVitals';
+//import reportWebVitals from './reportWebVitals';
 
 
 // DEPENDENCIES
@@ -40,8 +40,8 @@ app.get('/', (req, res) => {
 })
 
 // CONTROLLERS 
-const shoesController = require('./controllers/shoes_controller')
-app.use('/shoes', shoesController)
+const inventoryController = require('./src/controllers/inventory_controller')
+app.use('/inventory', inventoryController)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

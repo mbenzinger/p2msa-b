@@ -15,6 +15,7 @@ const InventorySchema = new Schema({
 const Inventory = mongoose.model('Inventory', InventorySchema)
 module.exports = Inventory
 
+
 //ORIGINAL SQL STUFF
 
 //const { INTEGER } = require('sequelize')

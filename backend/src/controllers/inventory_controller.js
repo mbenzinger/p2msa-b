@@ -1,14 +1,21 @@
 const express = require('express')
 const inventory = express.Router()
 const Inventory = require('../models/inventory')
+const inventorySeedData = require('../models/inventory_seed')
 
 //Home
-inventory.get('/', (req, res) => {
+inventory.get('/HomePage', (req, res) => {
     Inventory.find()
         .then(res.render('HomePage', {
             inventory: foundInventory,
             title: 'Home Page'
         }))
+})
+
+//SEED
+inventory.get('/data/seed', (req, res) => {
+    Inventory.insertMany(inventorySeedData)
+        .then(res.redirect('/HomePage'))
 })
 
 // CREATE
