@@ -2,12 +2,12 @@ const express = require('express')
 const inventory = express.Router()
 const Inventory = require('../models/inventory')
 
-//index
+//Home
 inventory.get('/', (req, res) => {
     Inventory.find()
-        .then(res.render('index', {
+        .then(res.render('HomePage', {
             inventory: foundInventory,
-            title: 'Index Page'
+            title: 'Home Page'
         }))
 })
 
