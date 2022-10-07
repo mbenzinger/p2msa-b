@@ -2,12 +2,14 @@ import React, { startTransition } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from '../frontend/src/App';
+import React, { startTransition } from 'react'
 //import reportWebVitals from './reportWebVitals';
 
 
 // DEPENDENCIES
 const express = require('express')
-// const { Sequelize } = require('sequelize')
+const path = require("path");
+const cors = require("cors");
 const mongoose = require('mongoose')
 require('dotenv').config()
 mongoose.connect(process.env.MONGO_URI, {
@@ -18,11 +20,15 @@ mongoose.connect(process.env.MONGO_URI, {
 )
 
 // CONFIGURATION
+// https://levelup.gitconnected.com/how-to-start-every-full-stack-project-7c92e07f8693
 const app = express()
+app.use(express.static(path.resolve(__dirname, "../frontend/build")));
+app.use(cors());
+app.get("/api", async (req, res) => {
+    res.send({ data: "received" });
+});
 const PORT = process.env.PORT
-// const AWS_RDS = process.env.AWS_RDS
-// const AWS_RDS_NAME = process.env.AWS_RDS_NAME
-// const AWS_RDS_PSWRD = process.env.AWS_RDS_PSWRD
+
 
 // MIDDLEWARE
 app.use(methodOverride('_method'))
