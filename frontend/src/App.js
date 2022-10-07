@@ -6,6 +6,16 @@ import{
 import React, {Component} from 'react'
 import HomePage from './views/HomePage';
 import POSPage from './views/POSPage';
+import React, { useState } from "react";
+import axios from "axios";
+
+//https://levelup.gitconnected.com/how-to-start-every-full-stack-project-7c92e07f8693
+const onClickButton = async () => {
+  const response = await axios.get(
+    `${process.env.REACT_APP_BACKEND_ROUTE}/api`
+  );
+  return response;
+};
 
 function App() {
   return (
